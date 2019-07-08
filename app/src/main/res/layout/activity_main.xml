@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="top"
+            app:srcCompat="@drawable/soul" />
+
+        <Button
+            android:id="@+id/btnQuote"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="130dp"
+            android:background="@drawable/button"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:text="Quote" />
+
+        <Button
+            android:id="@+id/btnFav"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="580dp"
+            android:layout_marginLeft="130dp"
+            android:background="@drawable/button"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:text="Favourite" />
+
+
+    </FrameLayout>
+
+
+
+
+
+</LinearLayout>
