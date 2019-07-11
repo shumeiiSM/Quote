@@ -13,7 +13,7 @@
     <!--android:layout_margin="2dp">-->
 
     <FrameLayout
-        android:id="@+id/forebackground"
+        android:id="@+id/catLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp">
@@ -27,36 +27,35 @@
             app:srcCompat="@drawable/attitude"/>
 
         <TextView
-            android:id="@+id/tvQuote"
+            android:id="@+id/tvCategory"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            android:text="Author" />
+
+
+        <TextView
+            android:id="@+id/tvQuote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
             android:text="Quote" />
 
-        <TextView
-            android:id="@+id/cname"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="top"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:text="name"
-            android:visibility="invisible"/>
-
-        <TextView
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="top"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:text="author"
-            android:visibility="invisible"/>
     </FrameLayout>
 
 

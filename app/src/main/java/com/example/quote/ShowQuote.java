@@ -53,55 +53,55 @@ public class ShowQuote extends AppCompatActivity {
         quotes = new ArrayList<>();
 
         if (name.equals("Inspirational")) {
-            quotes.add(new Quote("Roosevelt" ,R.drawable.inspirational));
-            quotes.add(new Quote("Peale" ,R.drawable.inspirational));
-            quotes.add(new Quote("Churchill" ,R.drawable.inspirational));
-            quotes.add(new Quote("Connelly" ,R.drawable.inspirational));
-            quotes.add(new Quote("Roggers" ,R.drawable.inspirational));
+            quotes.add(new Quote("Roosevelt" ,name, R.drawable.inspirational));
+            quotes.add(new Quote("Peale" ,name,R.drawable.inspirational));
+            quotes.add(new Quote("Churchill" ,name,R.drawable.inspirational));
+            quotes.add(new Quote("Connelly" ,name,R.drawable.inspirational));
+            quotes.add(new Quote("Roggers" ,name,R.drawable.inspirational));
 
         } else if (name.equals("Attitude")) {
-            quotes.add(new Quote("Churchill" ,R.drawable.attitude));
-            quotes.add(new Quote("Angelou" ,R.drawable.attitude));
-            quotes.add(new Quote("Lombardi" ,R.drawable.attitude));
-            quotes.add(new Quote("Angelou" ,R.drawable.attitude));
-            quotes.add(new Quote("Winfrey" ,R.drawable.attitude));
-            quotes.add(new Quote("West" ,R.drawable.attitude));
+            quotes.add(new Quote("Churchill" ,name,R.drawable.attitude));
+            quotes.add(new Quote("Angelou" ,name,R.drawable.attitude));
+            quotes.add(new Quote("Lombardi" ,name,R.drawable.attitude));
+            quotes.add(new Quote("Angelou" ,name,R.drawable.attitude));
+            quotes.add(new Quote("Winfrey" ,name,R.drawable.attitude));
+            quotes.add(new Quote("West" ,name,R.drawable.attitude));
 
         } else if (name.equals("Courage")) {
-            quotes.add(new Quote("Roosevelt" ,R.drawable.courage));
-            quotes.add(new Quote("Einstein" ,R.drawable.courage));
-            quotes.add(new Quote("Shakespeare" ,R.drawable.courage));
-            quotes.add(new Quote("Kennedy" ,R.drawable.courage));
-            quotes.add(new Quote("Emerson" ,R.drawable.courage));
+            quotes.add(new Quote("Roosevelt" ,name,R.drawable.courage));
+            quotes.add(new Quote("Einstein" ,name,R.drawable.courage));
+            quotes.add(new Quote("Shakespeare" ,name,R.drawable.courage));
+            quotes.add(new Quote("Kennedy" ,name,R.drawable.courage));
+            quotes.add(new Quote("Emerson" ,name,R.drawable.courage));
 
         } else if (name.equals("Perseverance")) {
-            quotes.add(new Quote("Churchill",R.drawable.perseverance));
-            quotes.add(new Quote("Angelou",R.drawable.perseverance));
-            quotes.add(new Quote("Nixon",R.drawable.perseverance));
-            quotes.add(new Quote("King",R.drawable.perseverance));
-            quotes.add(new Quote("O'Brien",R.drawable.perseverance));
-            quotes.add(new Quote("Bradley",R.drawable.perseverance));
+            quotes.add(new Quote("Churchill",name,R.drawable.perseverance));
+            quotes.add(new Quote("Angelou",name,R.drawable.perseverance));
+            quotes.add(new Quote("Nixon",name,R.drawable.perseverance));
+            quotes.add(new Quote("King",name,R.drawable.perseverance));
+            quotes.add(new Quote("O'Brien",name,R.drawable.perseverance));
+            quotes.add(new Quote("Bradley",name,R.drawable.perseverance));
 
         } else if (name.equals("Enthusiasm")) {
-            quotes.add(new Quote("Lombardi",R.drawable.enthusiasm));
-            quotes.add(new Quote("Peale",R.drawable.enthusiasm));
-            quotes.add(new Quote("Churchill",R.drawable.enthusiasm));
-            quotes.add(new Quote("Ball",R.drawable.enthusiasm));
-            quotes.add(new Quote("Coleridge",R.drawable.enthusiasm));
-            quotes.add(new Quote("McFee",R.drawable.enthusiasm));
+            quotes.add(new Quote("Lombardi",name,R.drawable.enthusiasm));
+            quotes.add(new Quote("Peale",name,R.drawable.enthusiasm));
+            quotes.add(new Quote("Churchill",name,R.drawable.enthusiasm));
+            quotes.add(new Quote("Ball",name,R.drawable.enthusiasm));
+            quotes.add(new Quote("Coleridge",name,R.drawable.enthusiasm));
+            quotes.add(new Quote("McFee",name,R.drawable.enthusiasm));
 
         } else if (name.equals("Ability")) {
-            quotes.add(new Quote("Wooden",R.drawable.ability));
-            quotes.add(new Quote("Einstein",R.drawable.ability));
-            quotes.add(new Quote("James",R.drawable.ability));
-            quotes.add(new Quote("Franklin",R.drawable.ability));
-            quotes.add(new Quote("Tracy",R.drawable.ability));
+            quotes.add(new Quote("Wooden",name,R.drawable.ability));
+            quotes.add(new Quote("Einstein",name,R.drawable.ability));
+            quotes.add(new Quote("James",name,R.drawable.ability));
+            quotes.add(new Quote("Franklin",name,R.drawable.ability));
+            quotes.add(new Quote("Tracy",name,R.drawable.ability));
 
         } else {
-            quotes.add(new Quote("Russell" ,R.drawable.love));
-            quotes.add(new Quote("Thoreau" ,R.drawable.love));
-            quotes.add(new Quote("Shakespeare" ,R.drawable.love));
-            quotes.add(new Quote("Lennon" ,R.drawable.love));
+            quotes.add(new Quote("Russell" ,name,R.drawable.love));
+            quotes.add(new Quote("Thoreau" ,name,R.drawable.love));
+            quotes.add(new Quote("Shakespeare" ,name,R.drawable.love));
+            quotes.add(new Quote("Lennon" ,name,R.drawable.love));
         }
 
 
@@ -114,9 +114,9 @@ public class ShowQuote extends AppCompatActivity {
         mRecyclerView.setAdapter(adapter);
 
 
-        Intent i = new Intent(ShowQuote.this, DetailQuote.class);
-        i.putExtra("catName",name);
-        startActivity(i);
+//        Intent i = new Intent(ShowQuote.this, DetailQuote.class);
+//        i.putExtra("catName",name);
+//        startActivity(i);
 
     }
 }

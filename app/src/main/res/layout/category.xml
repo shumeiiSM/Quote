@@ -13,7 +13,7 @@
         <!--android:layout_margin="2dp">-->
 
         <FrameLayout
-            android:id="@+id/view_forebackground"
+            android:id="@+id/catLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp">

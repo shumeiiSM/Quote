@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Favourite"></activity>
+        <activity android:name=".ShowFav"></activity>
+        <activity android:name=".Favourite" />
         <activity android:name=".DetailQuote" />
         <activity android:name=".ShowQuote" />
         <activity android:name=".Category" />

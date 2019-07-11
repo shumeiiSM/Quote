@@ -39,6 +39,8 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.MyViewHolder
         holder.author.setText(mQuoteList.get(position).getAuthor());
         holder.image.setImageResource(mQuoteList.get(position).getImage());
 
+        holder.cName.setText(mQuoteList.get(position).getCname());
+
         String let = mQuoteList.get(position).getAuthor().substring(0,2);
         holder.letter.setText(let);
 
@@ -49,6 +51,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.MyViewHolder
                 Intent intent = new Intent(mContext, DetailQuote.class);
 
                 // passing data to the quote activity
+                intent.putExtra("cname",mQuoteList.get(position).getCname());
                 intent.putExtra("author",mQuoteList.get(position).getAuthor());
                 // start the activity
                 mContext.startActivity(intent);
@@ -72,6 +75,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.MyViewHolder
         ImageView image;
         TextView letter;
         CardView cardView;
+        TextView cName;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -81,6 +85,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.MyViewHolder
             image = (ImageView) itemView.findViewById(R.id.catImage);
             cardView = (CardView) itemView.findViewById(R.id.cardview_id);
 
+            cName = (TextView) itemView.findViewById(R.id.cname);
 
         }
     }

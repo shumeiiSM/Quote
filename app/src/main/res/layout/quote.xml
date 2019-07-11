@@ -34,6 +34,16 @@
                 android:layout_height="match_parent"
                 android:text="R"/>
 
+            <TextView
+                android:id="@+id/cname"
+                android:textColor="#ffffff"
+                android:textSize="60sp"
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="P"
+                android:visibility="invisible"/>
+
         </FrameLayout>
 
 

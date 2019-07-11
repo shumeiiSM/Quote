@@ -13,13 +13,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class CatAdapter extends RecyclerView.Adapter<CatAdapter.MyViewHolder> {
+public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.MyViewHolder> {
 
     private Context mContext ;
     private ArrayList<Cat> mCatList ;
 
 
-    public CatAdapter(Context mContext, ArrayList<Cat> mCatList) {
+    public ShowAdapter(Context mContext, ArrayList<Cat> mCatList) {
         this.mContext = mContext;
         this.mCatList = mCatList;
     }
@@ -37,20 +37,22 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
         holder.name.setText(mCatList.get(position).getName());
-        holder.image.setImageResource(mCatList.get(position).getImage());
-        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(mContext, ShowQuote.class);
 
-                // passing data to the quote activity
-                intent.putExtra("name",mCatList.get(position).getName());
-                // start the activity
-                mContext.startActivity(intent);
-
-            }
-        });
+        //holder.image.setImageResource(mCatList.get(position).getImage());
+//        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(mContext, ShowQuote.class);
+//
+//                // passing data to the quote activity
+//                intent.putExtra("name",mCatList.get(position).getName());
+//                // start the activity
+//                mContext.startActivity(intent);
+//
+//            }
+//        });
 
     }
 
@@ -71,16 +73,18 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name;
-        ImageView image;
-        FrameLayout frameLayout ;
+        TextView name, author, quote;
+        //ImageView image;
+        //FrameLayout frameLayout ;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            name = (TextView) itemView.findViewById(R.id.tvCategory) ;
-            image = (ImageView) itemView.findViewById(R.id.imageView);
-            frameLayout = (FrameLayout) itemView.findViewById(R.id.catLayout);
+            name = (TextView) itemView.findViewById(R.id.tvCategory);
+            author = (TextView) itemView.findViewById(R.id.tvAuthor) ;
+            quote = (TextView) itemView.findViewById(R.id.tvQuote) ;
+            //image = (ImageView) itemView.findViewById(R.id.imageView);
+            //frameLayout = (FrameLayout) itemView.findViewById(R.id.catLayout);
 
 
         }
