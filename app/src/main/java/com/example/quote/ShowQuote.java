@@ -63,7 +63,6 @@ public class ShowQuote extends AppCompatActivity {
             quotes.add(new Quote("Churchill" ,name,R.drawable.attitude));
             quotes.add(new Quote("Angelou" ,name,R.drawable.attitude));
             quotes.add(new Quote("Lombardi" ,name,R.drawable.attitude));
-            quotes.add(new Quote("Angelou" ,name,R.drawable.attitude));
             quotes.add(new Quote("Winfrey" ,name,R.drawable.attitude));
             quotes.add(new Quote("West" ,name,R.drawable.attitude));
 

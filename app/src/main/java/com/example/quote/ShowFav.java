@@ -1,12 +1,15 @@
 package com.example.quote;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,9 +21,13 @@ public class ShowFav extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private CatAdapter adapter;
-    private ArrayList<Cat> cats;
+    private ShowAdapter adapter;
+    private ArrayList<ShowClass> show;
 
+//    String[] allBack = new String[10];
+//    String[] allQuote = new String[10];
+//    String[] allAuthor = new String[10];
+//    String[] allCat = new String[10];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,34 +37,50 @@ public class ShowFav extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        cats = new ArrayList<>();
-        cats.add(new Cat(R.drawable.inspirational, "Inspirational"));
-        cats.add(new Cat(R.drawable.attitude, "Attitude"));
-        cats.add(new Cat(R.drawable.courage, "Courage"));
-        cats.add(new Cat(R.drawable.perseverance, "Perseverance"));
-        cats.add(new Cat(R.drawable.enthusiasm, "Enthusiasm"));
-        cats.add(new Cat(R.drawable.ability, "Ability"));
-        cats.add(new Cat(R.drawable.love, "Love"));
-
         ivBack = findViewById(R.id.ivBack);
         mRecyclerView = findViewById(R.id.recyclerView);
 
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(ShowFav.this);
+        // Recieve data
+//        Intent intentReceived = getIntent();
+//        String thebackground = intentReceived.getStringExtra("background");
+//        String thequote = intentReceived.getStringExtra("quote");
+//        String theauthor = intentReceived.getStringExtra("author");
+//        String thecatName = intentReceived.getStringExtra("catName");
 
-        adapter = new CatAdapter(this, cats);
+        // Retrieve the saved data from the SharedPreferences object
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ShowFav.this);
+        int thebackground = prefs.getInt("background", 0);
+        String thequote = prefs.getString("quote", "no quote");
+        String theauthor = prefs.getString("author", "no author");
+        String thecatName = prefs.getString("catName", "no category");
 
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(adapter);
+        if (thebackground != 0 && thequote != null && theauthor != null && thecatName != null) {
+
+            show = new ArrayList<>();
+
+            show.add(new ShowClass(thequote, thecatName, theauthor, thebackground));
+
+            mRecyclerView.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(ShowFav.this);
+
+            adapter = new ShowAdapter(this, show);
+
+            mRecyclerView.setLayoutManager(mLayoutManager);
+            mRecyclerView.setAdapter(adapter);
+
+        } else {
+            Toast.makeText(ShowFav.this, "No Favourite Quote", Toast.LENGTH_LONG).show();
+        }
 
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
+
+
 
     }
 }

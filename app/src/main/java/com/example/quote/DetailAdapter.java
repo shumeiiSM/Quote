@@ -52,6 +52,7 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.MyViewHold
                 Intent intent = new Intent(mContext, Favourite.class);
 
                 // passing data to the quote activity
+                intent.putExtra("background",mQuoteList.get(position).getImage());
                 intent.putExtra("author",mQuoteList.get(position).getAuthor());
                 intent.putExtra("cname",mQuoteList.get(position).getCname());
                 intent.putExtra("quote",mQuoteList.get(position).getQuote());

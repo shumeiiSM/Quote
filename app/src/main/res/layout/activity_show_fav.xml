@@ -32,7 +32,7 @@
             app:civ_border_color="#000000"/>
 
         <TextView
-            android:id="@+id/myAuthor"
+            android:id="@+id/myFav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -40,7 +40,7 @@
             android:layout_gravity="bottom"
             android:textSize="35sp"
             android:textColor="#000000"
-            android:text="Author" />
+            android:text="Favourite" />
 
         <ImageView
             android:id="@+id/imageView"
