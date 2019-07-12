@@ -39,8 +39,9 @@ public class DetailQuote extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), ShowQuote.class);
-                startActivity(intent);
+                finish();
+//                Intent intent = new Intent(getBaseContext(), ShowQuote.class);
+//                startActivity(intent);
             }
         });
 

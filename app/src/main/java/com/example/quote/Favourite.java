@@ -13,11 +13,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Favourite extends AppCompatActivity {
 
     TextView myauthor, myquote, mycat;
     Button btnFav;
     ImageView ivCatBack;
+
+    CircleImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,17 @@ public class Favourite extends AppCompatActivity {
         myquote = findViewById(R.id.quote);
         ivCatBack = findViewById(R.id.ivCatBack);
         btnFav = findViewById(R.id.fav);
+
+        ivBack = findViewById(R.id.ivBack);
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+//                Intent intent = new Intent(getBaseContext(), DetailQuote.class);
+//                startActivity(intent);
+            }
+        });
 
         // Recieve data
         final Intent intent = getIntent();
